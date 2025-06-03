@@ -38,7 +38,7 @@ Táto **Streamlit aplikácia** umožňuje interaktívne vyhľadávať podobné *
 
 ## Štruktúra projektu
 
-´´´
+```
 ├── app.py # Hlavný skript Streamlit aplikácie  
 ├── data/  
 │ ├── contract_criteria_clean_split.csv # CSV s dátami  
@@ -48,4 +48,4 @@ Táto **Streamlit aplikácia** umožňuje interaktívne vyhľadávať podobné *
 ├── requirements.txt # Zoznam závislostí  
 ├── .streamlit/  
 │ └── config.toml # Nastavenie vzhľadu aplikácie  
-´´´
+```
