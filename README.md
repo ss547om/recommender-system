@@ -53,7 +53,7 @@ Príprava_dát1.ipynb
 README.md
 streamlit_app.py
 ```
-# Embedding Generator for Procurement Criteria
+# model.ipynb
 
 Tento skript slúži na predspracovanie dát pre aplikácie využívajúce sémantickú analýzu textu. Vygeneruje **embeddingy** pre stĺpce `criterion` a `description` pomocou predtrénovaného modelu `paraphrase-multilingual-MiniLM-L12-v2`.
 
