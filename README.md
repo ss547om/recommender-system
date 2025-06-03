@@ -39,13 +39,17 @@ Táto **Streamlit aplikácia** umožňuje interaktívne vyhľadávať podobné *
 ## Štruktúra projektu
 
 ```
-├── app.py # Hlavný skript Streamlit aplikácie  
-├── data/  
-│ ├── contract_criteria_clean_split.csv # CSV s dátami  
-│ ├── criteria_embeddings_split.npy # Embeddingy kritérií  
-│ └── descriptions_embeddings_split.npy # Embeddingy popisov  
-├── README.md # Dokumentácia  
-├── requirements.txt # Zoznam závislostí  
-├── .streamlit/  
-│ └── config.toml # Nastavenie vzhľadu aplikácie  
+data/
+    contract_criteria_clean_split.csv
+    contract_criteria_export.csv
+    criteria_data.csv
+    description_data.csv
+embeddings/
+    criteria_embeddings_split.npy
+    descriptions_embeddings_split.npy
+config.toml
+model.ipynb
+Príprava_dát1.ipynb
+README.md
+streamlit_app.py
 ```
