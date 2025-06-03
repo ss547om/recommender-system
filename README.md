@@ -16,7 +16,7 @@ Táto **Streamlit aplikácia** umožňuje interaktívne vyhľadávať podobné *
 
 ---
 
-## 🛠Funkcionalita
+## Funkcionalita
 
 - **Výber typu vyhľadávania** – medzi *Kritérium* a *Popis*
 - **Textové vyhľadávanie** – zadanie vlastného dotazu
