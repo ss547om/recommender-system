@@ -53,3 +53,24 @@ Príprava_dát1.ipynb
 README.md
 streamlit_app.py
 ```
+# Embedding Generator for Procurement Criteria
+
+Tento skript slúži na predspracovanie dát pre aplikácie využívajúce sémantickú analýzu textu. Vygeneruje **embeddingy** pre stĺpce `criterion` a `description` pomocou predtrénovaného modelu `paraphrase-multilingual-MiniLM-L12-v2`.
+
+---
+
+## Čo skript robí
+
+1. **Načíta vstupné dáta** zo stĺpcov `criterion` a `description`.
+2. **Vyčistí a prevedie texty na embeddingy** pomocou SentenceTransformer modelu.
+3. **Uloží embeddingy** ako `.npy` súbory do priečinka `embeddings/`.
+4. **Uloží dáta** s pôvodným textom do CSV súborov v priečinku `data/`.
+
+---
+
+## Požiadavky
+
+Inštaluj požadované knižnice:
+
+```bash
+pip install pandas numpy stanza sentence-transformers
