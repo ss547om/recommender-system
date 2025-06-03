@@ -74,3 +74,28 @@ Inštaluj požadované knižnice:
 
 ```bash
 pip install pandas numpy stanza sentence-transformers
+```
+---
+# Príprava_dát1.ipynb
+
+Tento skript slúži na extrakciu a úpravu kritérií verejných obstarávaní zo súboru vo formáte `.sav` (SPSS), ich predspracovanie a uloženie vo forme CSV súborov vhodných pre ďalšie NLP úlohy.
+
+---
+
+## Čo skript robí
+
+1. Načíta `.sav` súbor `contract_eval_CPV_HI.sav`.
+2. Vyberie relevantné stĺpce: `contract_id`, `criterion`, `description`, `label`.
+3. Uloží ich do CSV: `contract_criteria_export.csv`.
+4. Odfiltruje kritériá obsahujúce výraz *"cena"* (a jej varianty).
+5. Uloží necenové kritériá do `contract_criteria_necenove.csv`.
+
+---
+
+## Požiadavky
+
+Inštaluj požadované knižnice:
+
+```bash
+pip install pandas pyreadstat
+```
