@@ -52,7 +52,7 @@ Inštalácia závislostí:
 
 ```bash
 pip install streamlit pandas numpy torch scikit-learn sentence-transformers
-
+```
 
 ## Štruktúra projektu
 
