@@ -77,22 +77,19 @@ pip install streamlit pandas numpy torch scikit-learn sentence-transformers
 
 ---
 
-# model.ipynb
+## model.ipynb
 
-Tento skript slúži na predspracovanie dát pre aplikácie využívajúce sémantickú analýzu textu. Vygeneruje **embeddingy** pre stĺpce `criterion` a `description` pomocou predtrénovaného modelu `paraphrase-multilingual-MiniLM-L12-v2`.
+Tento Jupyter notebook slúži na vytváranie embeddingov textových kritérií a popisov, ktoré sú následne využité v aplikácii pre sémantické vyhľadávanie a odporúčanie.
 
----
+### Funkcionalita
 
-## Funkcionalita
+- Načíta vstupné dáta zo súboru `contract_criteria_final_general_only.csv`.
+- Extrahuje stĺpce `criterion` (kritériá) a `description` (popisy).
+- Použije predtrénovaný model **`paraphrase-multilingual-MiniLM-L12-v2`** zo `sentence-transformers` na prevod textov na embeddingy.
+- Uloží vytvorené embeddingy do priečinka `embeddings/` vo formáte `.npy`.
+- Uloží spracované dáta do CSV súborov v priečinku `data/` pre ďalšie spracovanie.
 
-1. **Načíta vstupné dáta** zo stĺpcov `criterion` a `description`.
-2. **Vyčistí a prevedie texty na embeddingy** pomocou SentenceTransformer modelu.
-3. **Uloží embeddingy** ako `.npy` súbory do priečinka `embeddings/`.
-4. **Uloží dáta** s pôvodným textom do CSV súborov v priečinku `data/`.
-
----
-
-## Požiadavky
+### Požiadavky
 
 ```bash
 pip install pandas numpy stanza sentence-transformers
