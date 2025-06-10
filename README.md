@@ -8,7 +8,9 @@ Tool for recommending suitable negotiation criteria as part of a university seme
 - sentence_transformers (SentenceTransformer, util)  
 - re  
 - streamlit  
-- torch  
+- torch
+- scikit-learn
+- ipywidgets  
 
 # Aplikácia na vyhľadávanie podobných kritérií a popisov
 
@@ -70,8 +72,6 @@ Tento skript slúži na predspracovanie dát pre aplikácie využívajúce séma
 
 ## Požiadavky
 
-Inštaluj požadované knižnice:
-
 ```bash
 pip install pandas numpy stanza sentence-transformers
 ```
@@ -82,7 +82,7 @@ Tento skript slúži na extrakciu a úpravu kritérií verejných obstarávaní 
 
 ---
 
-## Čo skript robí
+## Funkcionalita
 
 1. Načíta `.sav` súbor `contract_eval_CPV_HI.sav`.
 2. Vyberie relevantné stĺpce: `contract_id`, `criterion`, `description`, `label`.
@@ -94,8 +94,31 @@ Tento skript slúži na extrakciu a úpravu kritérií verejných obstarávaní 
 
 ## Požiadavky
 
-Inštaluj požadované knižnice:
-
 ```bash
 pip install pandas pyreadstat
+```
+# Klasifikácia popisov pomocou Naive Bayes a Logistic Regression
+
+# contract_classifier.ipynb
+
+Tento Jupyter notebook slúži na klasifikáciu textových popisov ku všeobecným kritériám verejného obstarávania. Kombinuje tradičné ML modely s možnosťou priameho mapovania známych popisov.
+
+---
+
+## Funkcionalita
+
+- **Načítanie a čistenie dát** zo súboru `contract_criteria_final_general_only.csv`
+- **Presné mapovanie** známych popisov – ak sa popis nachádza v dátach, kategória sa priradí priamo
+- **Fallback klasifikácia** neznámych popisov pomocou jedného z dvoch modelov:
+  - **Naive Bayes**
+  - **Logistic Regression** (s `class_weight='balanced'`)
+- **Vyhodnotenie** modelov pomocou `classification_report`
+- **Interaktívne rozhranie** v Jupyteri pomocou `ipywidgets`
+
+---
+
+## Požiadavky
+
+```bash
+pip install pandas scikit-learn ipywidgets
 ```
