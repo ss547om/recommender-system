@@ -36,7 +36,7 @@ README.md
 streamlit_app.py
 ```
 
-# Aplikácia na vyhľadávanie a predikciu všeobecných kritérií
+# streamlit_app na vyhľadávanie a predikciu všeobecných kritérií
 
 Táto **Streamlit aplikácia** kombinuje dve hlavné funkcionality:
 
