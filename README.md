@@ -15,6 +15,27 @@ Tool for recommending suitable negotiation criteria as part of a university seme
 - scikit-learn
 - ipywidgets  
 
+---
+
+## Štruktúra projektu
+
+```
+data/
+    contract_criteria_clean_split.csv
+    contract_criteria_export.csv
+    criteria_data.csv
+    description_data.csv
+embeddings/
+    criteria_embeddings_split.npy
+    descriptions_embeddings_split.npy
+    general_criterions_embeddings_split.npy
+config.toml
+model.ipynb
+Príprava_dát1.ipynb
+README.md
+streamlit_app.py
+```
+
 # Aplikácia na vyhľadávanie a predikciu všeobecných kritérií
 
 Táto **Streamlit aplikácia** kombinuje dve hlavné funkcionality:
@@ -54,24 +75,8 @@ Inštalácia závislostí:
 pip install streamlit pandas numpy torch scikit-learn sentence-transformers
 ```
 
-## Štruktúra projektu
+---
 
-```
-data/
-    contract_criteria_clean_split.csv
-    contract_criteria_export.csv
-    criteria_data.csv
-    description_data.csv
-embeddings/
-    criteria_embeddings_split.npy
-    descriptions_embeddings_split.npy
-    general_criterions_embeddings_split.npy
-config.toml
-model.ipynb
-Príprava_dát1.ipynb
-README.md
-streamlit_app.py
-```
 # model.ipynb
 
 Tento skript slúži na predspracovanie dát pre aplikácie využívajúce sémantickú analýzu textu. Vygeneruje **embeddingy** pre stĺpce `criterion` a `description` pomocou predtrénovaného modelu `paraphrase-multilingual-MiniLM-L12-v2`.
