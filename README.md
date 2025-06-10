@@ -61,7 +61,7 @@ Tento skript slúži na predspracovanie dát pre aplikácie využívajúce séma
 
 ---
 
-## Čo skript robí
+## Funkcionalita
 
 1. **Načíta vstupné dáta** zo stĺpcov `criterion` a `description`.
 2. **Vyčistí a prevedie texty na embeddingy** pomocou SentenceTransformer modelu.
