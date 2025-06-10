@@ -23,6 +23,8 @@ Tool for recommending suitable negotiation criteria as part of a university seme
 data/
     contract_criteria_clean_split.csv
     contract_criteria_export.csv
+    contract_criteria_final_general_only.csv
+    contract_criteria_necenove.csv
     criteria_data.csv
     description_data.csv
 embeddings/
@@ -30,6 +32,7 @@ embeddings/
     descriptions_embeddings_split.npy
     general_criterions_embeddings_split.npy
 config.toml
+contract_classifier.ipynb
 model.ipynb
 Príprava_dát1.ipynb
 README.md
