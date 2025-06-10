@@ -1,5 +1,8 @@
 # recommender-system
 Tool for recommending suitable negotiation criteria as part of a university semester project.
+
+---
+
 ### Potrebné balíčky  
 - pyreadstat  
 - pandas  
@@ -12,31 +15,44 @@ Tool for recommending suitable negotiation criteria as part of a university seme
 - scikit-learn
 - ipywidgets  
 
-# Aplikácia na vyhľadávanie podobných kritérií a popisov
+# Aplikácia na vyhľadávanie a predikciu všeobecných kritérií
 
-Táto **Streamlit aplikácia** umožňuje interaktívne vyhľadávať podobné **kritériá** alebo **popisy** pomocou modelu SentenceTransformer a predpočítaných embeddingov.
+Táto **Streamlit aplikácia** kombinuje dve hlavné funkcionality:
+
+1. **Sémantické vyhľadávanie podobných všeobecných kritérií alebo popisov** pomocou embeddingov.
+2. **Klasifikácia popisu** pomocou ML modelov (Logistic Regression / Naive Bayes) s možnosťou presného priradenia na základe známych vstupov.
 
 ---
 
 ## Funkcionalita
 
-- **Výber typu vyhľadávania** – medzi *Kritérium* a *Popis*
-- **Textové vyhľadávanie** – zadanie vlastného dotazu
-- **Nastaviteľný počet výsledkov** (1–20)
-- **Farebné označenie výsledkov** podľa skóre podobnosti:
-  - **≥ 0.8** – vysoká podobnosť
-  - **0.5–0.79** – stredná podobnosť
-  - **< 0.5** – nízka podobnosť
+### Vyhľadávanie podobností
+
+- Výber medzi vyhľadávaním podľa:
+  - *Všeobecného kritéria*
+  - *Popisu*
+- Využitie embeddingov vytvorených pomocou modelu `paraphrase-multilingual-MiniLM-L12-v2`
+- Farebne odlíšené výsledky podľa podobnosti:
+  - **≥ 0.8** – vysoká podobnosť (zelená)
+  - **0.5 – 0.79** – stredná podobnosť (žltá)
+  - **< 0.5** – nízka podobnosť (červená)
+- Nastaviteľný počet výsledkov (1–20)
+
+### Predikcia kategórie
+
+- Výber modelu: **Logistic Regression** alebo **Naive Bayes**
+- Ak sa zadaný popis zhoduje s popisom v dátach, použije sa presné priradenie z datasetu
+- Inak sa použije vybraný model na predikciu kategórie
 
 ---
 
-## Použitý model
+## Požiadavky
 
-- **Model:** [`paraphrase-multilingual-MiniLM-L12-v2`](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2)
-- **Embeddingy:** predpočítané `.npy` súbory (kritériá a popisy)
-- **Knižnice:** `sentence-transformers`, `torch`, `streamlit`, `pandas`, `numpy`
+Inštalácia závislostí:
 
----
+```bash
+pip install streamlit pandas numpy torch scikit-learn sentence-transformers
+
 
 ## Štruktúra projektu
 
@@ -49,6 +65,7 @@ data/
 embeddings/
     criteria_embeddings_split.npy
     descriptions_embeddings_split.npy
+    general_criterions_embeddings_split.npy
 config.toml
 model.ipynb
 Príprava_dát1.ipynb
